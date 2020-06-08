@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/beginFragment">
+
+    <fragment
+        android:id="@+id/beginFragment"
+        android:name="com.iflippie.level7_task2.fragments.BeginFragment"
+        android:label="HvA Quest"
+        tools:layout="@layout/fragment_begin" >
+        <action
+            android:id="@+id/action_beginFragment_to_questionFragment"
+            app:destination="@id/questionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionFragment"
+        android:name="com.iflippie.level7_task2.fragments.QuestionFragment"
+        android:label="Question"
+        tools:layout="@layout/fragment_question" >
+        <action
+            android:id="@+id/action_questionFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.iflippie.level7_task2.fragments.LocationFragment"
+        android:label="Location Clue"
+        tools:layout="@layout/fragment_location" >
+        <action
+            android:id="@+id/action_locationFragment_to_questionFragment"
+            app:destination="@id/questionFragment" />
+        <action
+            android:id="@+id/action_locationFragment_to_completedFragment"
+            app:destination="@id/completedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/completedFragment"
+        android:name="com.iflippie.level7_task2.fragments.CompletedFragment"
+        android:label="Quest Completed"
+        tools:layout="@layout/fragment_completed" >
+        <action
+            android:id="@+id/action_completedFragment_to_beginFragment"
+            app:destination="@id/beginFragment" />
+    </fragment>
+</navigation>
